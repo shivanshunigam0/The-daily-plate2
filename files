@@ -1,0 +1,117 @@
+// app/layout.tsx
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://dailyplate.example.com"),
+  title: {
+    default: "The Daily Plate | Find Your Mess Menu in Seconds",
+    template: "%s | The Daily Plate",
+  },
+  description:
+    "The Daily Plate is a food community for college students to discover mess menus nearby. Browse mess lists, daily highlights, and menus by meal.",
+  keywords: ["Mess Menu", "College Food", "Daily Plate", "Campus Mess", "Student Meals", "Hostel Mess"],
+  openGraph: {
+    title: "The Daily Plate — Find Your Mess Menu in Seconds",
+    description: "Discover mess menus around your college. Filters, highlights, specials, and more.",
+    url: "https://dailyplate.example.com",
+    siteName: "The Daily Plate",
+    images: [
+      {
+        url: "/images/og-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Daily Plate — College Mess Menus and Highlights",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Daily Plate — Find Your Mess Menu in Seconds",
+    description: "Discover mess menus around your college. Filters, highlights, specials, and more.",
+    images: ["/images/og-cover.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  alternates: {
+    canonical: "https://dailyplate.example.com",
+  },
+};
+
+// JSON-LD script
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "The Daily Plate",
+  "logo": "https://dailyplate.example.com/images/logo-128.png",
+};
+
+// app/page.tsx
+import Image from 'next/image';
+
+const HomePage = () => {
+  return (
+    <div>
+      <Image src="/images/hero-mess-hall.jpg" height={520} width={640} alt="Hero Mess Hall" />
+      {/* rest of code here */}
+    </div>
+  );
+};
+
+export default HomePage;
+
+// app/about/AboutPageClient.tsx
+import Image from 'next/image';
+
+const AboutPageClient = () => {
+  return (
+    <div>
+      <Image src="/images/about-team.jpg" height={540} width={680} alt="About Team" />
+      {/* rest of code here */}
+    </div>
+  );
+};
+
+export default AboutPageClient;
+
+// data/misses.ts
+export const messes = [
+  {
+    id: "sunrise-hostel",
+    name: "Sunrise Hostel",
+    photo: "/images/sunrise-hostel.jpg",
+    // other fields here
+  },
+  {
+    id: "green-leaf",
+    name: "Green Leaf",
+    photo: "/images/green-leaf.jpg",
+    // other fields here
+  },
+  {
+    id: "hostel-block-a",
+    name: "Hostel Block A",
+    photo: "/images/hostel-block-a.jpg",
+    // other fields here
+  },
+  {
+    id: "city-cafe-mess",
+    name: "City Cafe Mess",
+    photo: "/images/city-cafe-mess.jpg",
+    // other fields here
+  },
+  {
+    id: "campus-delights",
+    name: "Campus Delights",
+    photo: "/images/campus-delights.jpg",
+    // other fields here
+  },
+  {
+    id: "hostel-block-c",
+    name: "Hostel Block C",
+    photo: "/images/hostel-block-c.jpg",
+    // other fields here
+  },
+];
